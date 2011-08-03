@@ -48,14 +48,38 @@ cout<<"Gledano iz broda:\n";
 cout<<s;
 cout<<sqrt(3e+20/10);
 
+tr=0;
+vr=0;
+ar=10.0;
+sr=0.;
+while(sr<s){
+	//ispis trenutacnih vrijednosti (r je za gledano s Zemlje)
+	//vr,mr,ar,sr
+
+	//ispis onoga sto osjecaju putnici (o je za osjetilno)
+	//vo=vr/t*L(vr), ao, to
+
+	//put koji smo prošli sa trenutacnom brzinom vr (ili trenutačnom akceleracijom ar)
+	sr+=..
+
+	to+=dt*L
+
+	//brzina koju imamo na kraju perioda
+	vr+=dt*ar
+	mr=L(vr)..
+	ar=L(vr)..
+	tr+=dt
+}
 
 char z;
 cin>>z;
 
+
+
+
 return 0;}
 float sqrt( float x);
 //funkcija koja nam za brzinu v vraća Lorentzov faktor
-int L(long double v){
+long double L(long double v){
 	return sqrt(1.0-((v*v)/(c*c))); 
-
 }
