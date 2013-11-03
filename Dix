@@ -1,0 +1,70 @@
+package com.example.diagraf;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.view.View.OnClickListener;
+
+public class MainActivity extends Activity {
+	int Vrhova = -1;
+	  int Veza = -1;
+	  int A, B;
+	 
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+			
+		
+		  Button klik = (Button) findViewById(R.id.portvrda);
+		  TextView prikaz = (TextView) findViewById(R.id.prikaz);
+		  TextView popis_vrh = (TextView) findViewById(R.id.popis_vrhova);
+		  TextView vrh = (TextView) findViewById(R.id.vrhova);
+		  TextView vez = (TextView) findViewById(R.id.veza);
+		 final  EditText cin = (EditText) findViewById(R.id.cin);
+		  
+		  
+		  klik.setOnClickListener(
+				  new View.OnClickListener() {
+
+			    public void onClick(View v) {
+			    	if( Vrhova == -1){
+						String x= cin.getText().toString();
+				         Vrhova = Integer.parseInt(x);
+				     
+					}
+			    	else {
+						String x= cin.getText().toString();
+				         Veza = Integer.parseInt(x);
+				         
+					}
+			    }
+			    
+			}); 
+		  if( Veza != -1) vez.setText("Broj veza : " + Veza);
+	         if( Veza != -1){
+	        	prikaz.setText("Unesi veze!");
+	        	popis_vrh.setText("Veze: ");
+	         }
+		  if( Vrhova != -1) vrh.setText("Broj vrhova : " + Vrhova);
+	        if( Veza == -1)  prikaz.setText("Unesi broj veza!");
+	} 
+	
+	
+	 
+	
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+	
+	
+	
+}
